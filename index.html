@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f5ef">
+<title>RE:CIPE — 나만의 레시피를 만드는 곳</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Jua&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#home" aria-label="RE:CIPE 홈"><span class="brand-hat" aria-hidden="true">♨</span> RE:CIPE</a>
+  <nav aria-label="주 메뉴">
+    <a class="nav-link active" href="#home" data-page="home"><span>⌂</span> 홈</a>
+    <a class="nav-link" href="#recommend" data-page="recommend"><span class="nav-tomato">●</span> 레시피 추천</a>
+    <a class="nav-link" href="#variation" data-page="variation"><span>⟳</span> 레시피 변형</a>
+  </nav>
+  <span class="top-note"><span class="header-tomato" aria-hidden="true">🍅</span></span>
+</header>
+
+<main>
+<section id="home" class="page active-page">
+  <div class="home-wrap">
+    <div class="floating pixel tomato-pixel" aria-hidden="true"><i></i></div>
+    <div class="floating sparkle s1">✦</div><div class="floating sparkle s2">✧</div><div class="floating sparkle s3">✦</div><div class="pixel-leaf leaf-one" aria-hidden="true"></div><div class="pixel-leaf leaf-two" aria-hidden="true"></div><div class="kitchen-shelf" aria-hidden="true"><span></span><i></i><b></b></div><div class="pixel-cloud cloud-one" aria-hidden="true"></div><div class="pixel-cloud cloud-two" aria-hidden="true"></div><div class="pixel-cat" aria-hidden="true"><i></i><b></b></div>
+    
+    <div class="hero-logo-wrap"><div class="pixel-hat" aria-hidden="true"></div><div class="hero-logo" aria-label="RE:CIPE">RE<span class="logo-colon">:</span>CIPE</div></div>
+    <p class="hero-copy" id="tagline">레시피는 정답이 아니라, 내가 만드는 요리의 시작입니다.</p>
+    <div class="hero-chef" aria-hidden="true"><div class="chef-hat"></div><div class="chef-hair"></div><div class="chef-face"><b></b><b></b><em></em></div><div class="chef-body"><span>✦</span></div><div class="chef-arm"></div><div class="chef-pan"></div></div>
+    <div class="home-cards">
+      <article class="feature-card recommend-card">
+        <div class="card-art fridge-art" aria-hidden="true"><div class="fridge-door"></div><span class="fridge-tomato">●</span><span class="art-spark">✦</span></div>
+        <div class="feature-text"><span class="eyebrow">USE WHAT YOU HAVE</span><h2>레시피 추천</h2><p>냉장고 속 재료로,<br>오늘의 한 끼를 찾아봐.</p><button class="primary-btn" data-go="recommend">지금 시작하기 <span>→</span></button></div>
+      </article>
+      <article class="feature-card variation-card">
+        <div class="card-art book-art" aria-hidden="true"><div class="recipe-book"><span>✿</span><small>MY RECIPE</small></div><span class="book-spark">✧</span></div>
+        <div class="feature-text"><span class="eyebrow">MAKE IT YOURS</span><h2>레시피 변형</h2><p>재료와 비율을 바꾸고,<br>나만의 방식으로 완성해봐.</p><button class="primary-btn" data-go="variation">지금 시작하기 <span>→</span></button></div>
+      </article>
+    </div>
+    <div class="home-bottom"><span class="bottom-line"></span> A RECIPE IS A STARTING POINT. <span class="bottom-line"></span></div>
+  </div>
+</section>
+
+<section id="recommend" class="page">
+  <div class="page-heading"><span class="eyebrow">RECIPE FINDER / 01</span><h1>냉장고 속 재료로,<br><span>오늘 뭐 먹지?</span></h1><p>가지고 있는 재료를 적어봐. 재료가 모이면 오늘의 메뉴도 보여.</p></div>
+  <div class="work-grid">
+    <div class="panel">
+      <div class="panel-title"><span class="step-no">01</span><div><h2>가지고 있는 재료</h2><p>쉼표 또는 엔터로 구분해서 입력해줘.</p></div></div>
+      <label class="field-label" for="pantry">냉장고 재료</label>
+      <textarea id="pantry" rows="4" placeholder="예: 달걀, 양파, 대파, 밥, 김치"></textarea>
+      <div class="quick-tags"><button type="button" class="tag" data-ingredient="달걀">+ 달걀</button><button type="button" class="tag" data-ingredient="양파">+ 양파</button><button type="button" class="tag" data-ingredient="두부">+ 두부</button><button type="button" class="tag" data-ingredient="김치">+ 김치</button><button type="button" class="tag" data-ingredient="토마토">+ 토마토</button></div>
+      <button id="find-recipes" class="primary-btn full-btn">내 재료로 레시피 찾기 <span>→</span></button>
+      <p class="fine-print">현재는 내장된 예시 레시피를 재료명으로 비교해 보여줘. 외부 레시피 DB나 AI 검색은 연결되어 있지 않아.</p>
+    </div>
+    <div class="results-panel">
+      <div class="results-top"><div><span class="eyebrow">TODAY'S IDEAS</span><h2>추천 메뉴</h2></div><span class="pixel-badge">PIXEL KITCHEN</span></div>
+      <div id="recommend-results" class="recommend-results"><div class="empty-state"><div class="empty-bowl">♨</div><strong>재료를 입력하면 메뉴를 찾아줄게!</strong><span>왼쪽에 냉장고 속 재료를 적어줘.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="variation" class="page">
+  <div class="page-heading"><span class="eyebrow">RECIPE LAB / 02</span><h1>조금 바꾸면,<br><span>나만의 레시피.</span></h1><p>기존 레시피와 바꾸고 싶은 조건을 입력하면 재료량과 조리 메모를 정리해줄게.</p></div>
+  <div class="lab-layout">
+    <div class="panel recipe-input-panel">
+      <div class="panel-title"><span class="step-no">01</span><div><h2>기존 레시피 입력</h2><p>아는 정보만 입력해도 괜찮아.</p></div></div>
+      <label class="field-label" for="recipe-name">레시피 이름</label><input id="recipe-name" value="나만의 팥양갱" placeholder="예: 팥양갱">
+      <div class="split-label"><label class="field-label" for="ingredient-list">재료와 사용량</label><button id="add-ingredient" class="text-btn" type="button">＋ 재료 추가</button></div>
+      <div id="ingredient-rows" class="ingredient-rows">
+        <div class="ingredient-row"><input class="ing-name" value="적앙금" aria-label="재료명"><input class="ing-amount" type="number" min="0" step="any" value="200" aria-label="재료량"><input class="ing-unit" value="g" aria-label="단위"><button class="remove-row" aria-label="재료 삭제">×</button></div>
+        <div class="ingredient-row"><input class="ing-name" value="한천 분말" aria-label="재료명"><input class="ing-amount" type="number" min="0" step="any" value="5" aria-label="재료량"><input class="ing-unit" value="g" aria-label="단위"><button class="remove-row" aria-label="재료 삭제">×</button></div>
+        <div class="ingredient-row"><input class="ing-name" value="설탕" aria-label="재료명"><input class="ing-amount" type="number" min="0" step="any" value="20" aria-label="재료량"><input class="ing-unit" value="g" aria-label="단위"><button class="remove-row" aria-label="재료 삭제">×</button></div>
+        <div class="ingredient-row"><input class="ing-name" value="올리고당" aria-label="재료명"><input class="ing-amount" type="number" min="0" step="any" value="25" aria-label="재료량"><input class="ing-unit" value="g" aria-label="단위"><button class="remove-row" aria-label="재료 삭제">×</button></div>
+        <div class="ingredient-row"><input class="ing-name" value="물" aria-label="재료명"><input class="ing-amount" type="number" min="0" step="any" value="120" aria-label="재료량"><input class="ing-unit" value="g" aria-label="단위"><button class="remove-row" aria-label="재료 삭제">×</button></div>
+      </div>
+      <label class="field-label" for="method">기존 조리 순서</label><textarea id="method" rows="4" placeholder="조리 순서를 적어줘.">냄비에 물과 한천 분말을 넣고 충분히 불린다. 끓이며 한천을 녹인 뒤 적앙금과 설탕을 넣고 저어가며 졸인다. 올리고당을 넣고 틀에 부어 굳힌다.</textarea>
+      <div class="upload-box"><div><strong>레시피 사진 첨부</strong><small>JPG · PNG · WEBP / 사진 미리보기만 지원</small></div><label class="upload-btn" for="recipe-photo">파일 선택</label><input id="recipe-photo" type="file" accept="image/jpeg,image/png,image/webp" hidden></div><div id="photo-status" class="photo-status">사진 속 글자 자동 인식(OCR)은 아직 연결되지 않았어.</div>
+    </div>
+    <div class="panel change-panel">
+      <div class="panel-title"><span class="step-no">02</span><div><h2>어떻게 바꿔볼까?</h2><p>변형 모드와 원하는 결과를 선택해줘.</p></div></div>
+      <label class="field-label" for="change-mode">변형 방식</label>
+      <select id="change-mode"><option value="sub">재료 대체</option><option value="ratio">비율 변경</option><option value="both" selected>재료 대체 + 비율 변경</option></select>
+      <div id="substitution-area"><div class="split-label"><label class="field-label">재료 대체</label><button id="add-sub" class="text-btn" type="button">＋ 대체 추가</button></div><div id="substitution-rows"><div class="sub-row"><input class="sub-from" value="한천 분말" placeholder="기존 재료"><span>→</span><input class="sub-to" value="젤라틴" placeholder="대체 재료"><button class="remove-row">×</button></div></div></div>
+      <div id="ratio-area"><div class="split-label"><label class="field-label">재료량 변경</label><button id="add-ratio" class="text-btn" type="button">＋ 변경 추가</button></div><div id="ratio-rows"><div class="ratio-row"><select class="ratio-name"><option>적앙금</option><option>한천 분말</option><option>설탕</option><option>올리고당</option><option>물</option></select><span>→</span><input class="ratio-value" type="number" value="250" min="0" step="any"><small>g</small><button class="remove-row">×</button></div></div></div>
+      <label class="field-label" for="goal">변형 목적</label><textarea id="goal" rows="3" placeholder="예: 팥 맛을 더 진하게, 단맛은 그대로 유지하고 싶어.">팥 맛을 더 진하게 만들기</textarea>
+      <button id="analyze" class="primary-btn full-btn">변형 레시피 만들기 <span>✦</span></button>
+      <p class="fine-print">계산과 규칙 기반 안내야. 식품 과학 검증이나 AI 분석 결과는 아니므로 첫 조리는 소량 테스트를 권장해.</p>
+    </div>
+  </div>
+  <section id="variation-output" class="output-panel" hidden>
+    <div class="output-heading"><div><span class="eyebrow">YOUR REMIX</span><h2 id="output-title">변형 결과</h2></div><div class="output-actions"><button id="copy-result" class="secondary-btn">결과 복사</button><button id="print-result" class="secondary-btn">인쇄 / PDF</button></div></div>
+    <div class="evaluation-grid" id="evaluation"></div>
+    <div class="compare-grid"><div class="compare-card"><h3>기존 재료</h3><div id="original-list"></div></div><div class="compare-card changed"><h3>변형 재료</h3><div id="changed-list"></div></div></div>
+    <div class="result-columns"><div class="result-card"><h3>조리 순서 및 변경 메모</h3><div id="method-result"></div></div><div class="result-card"><h3>예상 변화와 주의점</h3><div id="notes-result"></div></div></div>
+    <p class="disclaimer">※ 이 결과는 입력값에 대한 단순 배합 계산과 일반적인 조리 원리 기반 참고 메모야. 재료·제품별 농도와 조리 환경에 따라 결과가 달라질 수 있어. 실제 완성도는 조리 테스트 전에는 확정할 수 없어.</p>
+  </section>
+</section>
+</main>
+<footer><div class="footer-brand">RE:CIPE<span>.</span></div><p>A RECIPE IS A STARTING POINT.</p><div class="footer-tomato">●</div></footer>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="app.js"></script>
+</body></html>
